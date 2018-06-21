@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser'
-import { NgModule } from '@angular/core'
+import { Inject, NgModule, PLATFORM_ID } from '@angular/core'
+import { isPlatformBrowser, isPlatformServer } from '@angular/common'
 import { RouterModule } from '@angular/router'
+
 import { TransferHttpCacheModule } from '@nguniversal/common'
 
 import { AppComponent } from './app'
@@ -81,4 +83,13 @@ export const directives = [
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
+    if (isPlatformBrowser(this.platformId)) {
+      var hash = location.hash.replace('#!/', '')
+      if (hash.length > 1) {
+        history.pushState({}, 'entry page', hash)
+      }
+    }
+  }
+}
