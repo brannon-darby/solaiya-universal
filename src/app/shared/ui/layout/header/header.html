@@ -1,0 +1,38 @@
+<nav class="navbar navbar-expand-lg navbar-light p-1">
+  <div class="container-fluid">
+    <a class="navbar-brand"
+       routerLink="/">
+    <img src="assets/solaiya.png"
+         class="img-fluid"
+         width="260px" />
+    </a>
+    <button class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+            (click)="expanded = !expanded">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse text-center"
+         id="navbarNav"
+         [class.show]="expanded">
+      <div class="navbar-nav">
+        <a *ngFor="let item of nav"
+           class="nav-item nav-link"
+           [routerLink]="item.link"
+           routerLinkActive="active">{{ item.label }}
+        </a>
+      </div>
+      <span class="social-buttons ml-auto">
+          <a *ngFor="let item of socialButtons"
+             [class]="item.class"
+             [href]="item.link">
+             <i [class]="item.icon"></i>
+          </a>
+      </span>
+    </div>
+  </div>
+</nav>

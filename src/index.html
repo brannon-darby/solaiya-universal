@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>SOLAIYA</title>
+  <base href="/">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1">
+  <link rel="icon"
+        type="image/x-icon"
+        href="assets/sun.png">
+  <style>
+.app-bg {
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  z-index: -1;
+}
+
+.app-bg::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: radial-gradient(#fff, #fff);
+  opacity: 0.75;
+}
+
+.app-bg img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  min-width: 50%;
+  min-height: 50%;
+}
+
+  </style>
+</head>
+
+<body>
+  <div class="app-bg animated fadeIn">
+    <img src="assets/beach.jpg"
+         alt="">
+  </div>
+  <app-root></app-root>
+</body>
+
+</html>

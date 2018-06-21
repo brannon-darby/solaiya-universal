@@ -1,0 +1,41 @@
+.app-body {
+  min-height: 500px;
+}
+
+.home-page {
+  position: fixed;
+  top     : -50%;
+  left    : -50%;
+  width   : 200%;
+  height  : 200%;
+  z-index : 9000;
+
+  &::after {
+    content         : '';
+    position        : absolute;
+    top             : 0;
+    right           : 0;
+    bottom          : 0;
+    left            : 0;
+    background-image: radial-gradient(#fff, #fff);
+    opacity         : 0.75;
+  }
+}
+
+.home-page img {
+  position  : absolute;
+  top       : 0;
+  left      : 0;
+  right     : 0;
+  bottom    : 0;
+  margin    : auto;
+  min-width : 50%;
+  min-height: 50%;
+}
+
+.home-page-logo {
+  position: relative;
+  z-index : 9003;
+}
+
+.title {}
